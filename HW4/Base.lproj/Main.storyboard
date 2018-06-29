@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HW4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-Zz-h5D">
+                                <rect key="frame" x="0.0" y="65" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="p89-mc-cC0"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ae-ai-Uji">
+                                <rect key="frame" x="0.0" y="25" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59a-uA-zcd">
+                                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2TJ-4k-gmE"/>
+                                            <constraint firstAttribute="width" constant="30" id="3Of-I8-ROD"/>
+                                        </constraints>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p1u-98-hvC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-u6-8CE">
+                                        <rect key="frame" x="335" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Ldt-3Q-WH4"/>
+                                            <constraint firstAttribute="height" constant="30" id="pj4-EP-qY7"/>
+                                        </constraints>
+                                        <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <action selector="editButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g9y-BF-QrX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="0ED-hg-CRr"/>
+                                    <constraint firstAttribute="bottom" secondItem="59a-uA-zcd" secondAttribute="bottom" constant="10" id="4eu-i5-23B"/>
+                                    <constraint firstAttribute="bottom" secondItem="8TV-u6-8CE" secondAttribute="bottom" constant="10" id="9wM-H8-so3"/>
+                                    <constraint firstItem="8TV-u6-8CE" firstAttribute="top" secondItem="8ae-ai-Uji" secondAttribute="top" constant="10" id="E9o-yj-IMl"/>
+                                    <constraint firstAttribute="height" constant="40" id="Sbh-qK-wUK"/>
+                                    <constraint firstItem="59a-uA-zcd" firstAttribute="top" secondItem="8ae-ai-Uji" secondAttribute="top" constant="10" id="cgq-Jb-otF"/>
+                                    <constraint firstItem="59a-uA-zcd" firstAttribute="leading" secondItem="8ae-ai-Uji" secondAttribute="leading" constant="10" id="egL-po-Srf"/>
+                                    <constraint firstAttribute="trailing" secondItem="8TV-u6-8CE" secondAttribute="trailing" constant="10" id="ge3-xE-zVf"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="r7k-13-axe">
+                                <rect key="frame" x="10" y="125" width="355" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="LuP-uZ-8Zw"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Done"/>
+                                    <segment title="Not done"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortActionSegm:" destination="BYZ-38-t0r" eventType="valueChanged" id="EW4-RB-lTm"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aeh-Tf-fKD">
+                                <rect key="frame" x="0.0" y="158" width="375" height="509"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="7k5-eZ-Jn8">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7k5-eZ-Jn8" id="caj-SX-wFV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="eMu-Ec-skD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7j2-1J-aMa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Aeh-Tf-fKD" firstAttribute="top" secondItem="r7k-13-axe" secondAttribute="bottom" constant="5" id="5ve-7g-nPo"/>
+                            <constraint firstItem="8ae-ai-Uji" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="D5Z-qp-FzN"/>
+                            <constraint firstItem="qYx-Zz-h5D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HH9-2Y-VC1"/>
+                            <constraint firstItem="Aeh-Tf-fKD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JRp-BB-jgf"/>
+                            <constraint firstItem="8ae-ai-Uji" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SHB-2j-3g4"/>
+                            <constraint firstItem="qYx-Zz-h5D" firstAttribute="top" secondItem="8ae-ai-Uji" secondAttribute="bottom" id="cso-hc-KBj"/>
+                            <constraint firstItem="8ae-ai-Uji" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dSL-LS-ji9"/>
+                            <constraint firstItem="r7k-13-axe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hNd-AZ-OIh"/>
+                            <constraint firstItem="Aeh-Tf-fKD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hll-zH-E7E"/>
+                            <constraint firstItem="qYx-Zz-h5D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="l86-Jo-zIW"/>
+                            <constraint firstItem="Aeh-Tf-fKD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qBq-Mg-Hsb"/>
+                            <constraint firstItem="r7k-13-axe" firstAttribute="top" secondItem="qYx-Zz-h5D" secondAttribute="bottom" constant="10" id="sww-l2-Ilx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r7k-13-axe" secondAttribute="trailing" constant="10" id="t8Q-Vs-1dl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="qYx-Zz-h5D" id="GJX-al-hb9"/>
+                        <outlet property="sortSegmented" destination="r7k-13-axe" id="1VR-d9-lsY"/>
+                        <outlet property="tableView" destination="Aeh-Tf-fKD" id="iMk-ud-qUP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
